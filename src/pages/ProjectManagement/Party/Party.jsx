@@ -22,18 +22,17 @@ const Party = () => {
 
       <div className="mr-3 ml-3">
         <div className="flex justify-between">
-            <Input type="text" className="w-96" label="Search Account" size='sm'/>
-            <Button onPress={onOpen}>Open Modal</Button>
+            <Input type="text" className="w-96" label="Search Party Name" size='sm'/>
+            <Button onPress={onOpen}>Add New Party</Button>
         </div>
 
         <Table aria-label="Example static collection table" className="mt-7">
           <TableHeader>
-            <TableColumn>Account no</TableColumn>
-            <TableColumn>Head</TableColumn>
-            <TableColumn>Sub Head</TableColumn>
-            <TableColumn>Description</TableColumn>
-            <TableColumn>Status</TableColumn>
-
+            <TableColumn>Sr no</TableColumn>
+            <TableColumn>Name</TableColumn>
+            <TableColumn>Email</TableColumn>
+            <TableColumn>Phone No</TableColumn>
+            <TableColumn>Address</TableColumn>
             <TableColumn>Action</TableColumn>
 
 
@@ -75,15 +74,29 @@ const Party = () => {
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1">Open Account</ModalHeader>
+              <ModalHeader className="flex flex-col gap-1">Add Party</ModalHeader>
               <ModalBody>
                 <div>
 
                   <form>
                     <div className="flex w-full flex-wrap md:flex-nowrap gap-4">
+                    <Input type="text" label="Name" size='sm' />
+
+                    <Input type="email" label="Email" size='sm' />
+                      {/* <Select
+                        size="sm"
+                        label="Name"
+                        className="max-w-xs"
+                      >
+                        {animals.map((animal) => (
+                          <SelectItem key={animal.value} value={animal.value}>
+                            {animal.label}
+                          </SelectItem>
+                        ))}
+                      </Select> */}
                       <Select
                         size="sm"
-                        label="Select Main Head"
+                        label="Platform"
                         className="max-w-xs"
                       >
                         {animals.map((animal) => (
@@ -92,19 +105,7 @@ const Party = () => {
                           </SelectItem>
                         ))}
                       </Select>
-                      <Select
-                        size="sm"
-                        label="Select Sub Head"
-                        className="max-w-xs"
-                      >
-                        {animals.map((animal) => (
-                          <SelectItem key={animal.value} value={animal.value}>
-                            {animal.label}
-                          </SelectItem>
-                        ))}
-                      </Select>
-                      <Input type="text" label="Account No" size='sm' />
-                      <Input type="text" label="Name" size="sm" />
+                      <Input type="text" label="Contact #" size="sm" />
 
                     </div>
                   </form>
